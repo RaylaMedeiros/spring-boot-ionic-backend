@@ -13,7 +13,7 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository repo;
 
-	public Categoria busca(Integer id) {
+	public Categoria find(Integer id) {
 		Categoria obj = repo.findOne(id);
 
 		if (obj == null) {
