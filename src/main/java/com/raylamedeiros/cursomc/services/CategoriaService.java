@@ -5,16 +5,22 @@ import org.springframework.stereotype.Service;
 
 import com.raylamedeiros.cursomc.domain.Categoria;
 import com.raylamedeiros.cursomc.repositories.CategoriaRepository;
+import com.raylamedeiros.cursomc.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {
-	
+
 	@Autowired
 	private CategoriaRepository repo;
-	
+
 	public Categoria busca(Integer id) {
 		Categoria obj = repo.findOne(id);
-		
+
+		if (obj == null) {
+			throw new ObjectNotFoundException(
+					"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName());
+		}
+
 		return obj;
 	}
 }
