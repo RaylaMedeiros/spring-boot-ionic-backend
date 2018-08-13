@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.raylamedeiros.cursomc.domain.Cidade;
 import com.raylamedeiros.cursomc.domain.Cliente;
@@ -38,6 +39,7 @@ public class ClienteService {
 		return obj;
 	}
 
+	@Transactional
 	public Cliente insert(Cliente obj) {
 		obj.setId(null);
 		obj = repo.save(obj);
