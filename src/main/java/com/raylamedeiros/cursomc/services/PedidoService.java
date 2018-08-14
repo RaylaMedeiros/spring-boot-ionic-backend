@@ -22,4 +22,8 @@ public class PedidoService {
 
 		return obj;
 	}
+	
+	/*public Pedido insert(Pedido obj) {
+		
+	}*/
 }
