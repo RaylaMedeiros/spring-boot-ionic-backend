@@ -16,6 +16,7 @@ public class Cidade implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	// Nome da cidade
 	private String nome;
 
 	@ManyToOne
